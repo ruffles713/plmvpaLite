@@ -45,7 +45,7 @@ LStype = 'LSA'; %LSS or LSA will divert code to different accordingly named beta
 ImgDims = 3; %if working with timeseries, it is highly recommended that you use 4D nifti files ('4'). If you have split them out into TR-by-TR, or are working with betas, enter '3'
 
 %% Directories
-S.expt_dir = ['/home/brain/host/mvpa_sample_data/' S.exp_name '/'];%study location
+S.expt_dir = ['/Users/rahulgurram/mvpa_sample_data/' S.exp_name '/'];%study location
 
 par.subdir =[S.expt_dir S.subj_id];%subject location
 
@@ -100,7 +100,7 @@ if runs_concat == 1
     
     %before loading and preprocessing all the pattern data, we can see if its
     %already there for analysis
-    if use_exist_workspace && exist([S.mvpa_dir '/RSA_data/' S.subj_id '_' mask '_condensedpats.mat']);
+    if use_exist_workspace && exist([S.mvpa_dir '/RSA_data/' S.subj_id '_' mask '_condensedpats.mat'])
         load([S.mvpa_dir '/RSA_data/' S.subj_id '_' mask '_condensedpats.mat']);
         load([S.mvpa_dir '/RSA_data/' S.subj_id '_onsets_expanded.mat']);
     else
